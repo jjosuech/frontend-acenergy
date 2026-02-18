@@ -1,0 +1,66 @@
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--dark-bg);
+  z-index: 1000;
+}
+
+.nav {
+  max-width: 1500px;
+  margin: 0 auto; 
+  padding: 7px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 70px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  color: var(--white);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  color: var(--orange);
+}
+
+.nav-links a{
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.nav-links a:hover{
+  color: var(--orange);
+}
+
+/* Logo + texto juntos */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Texto AC Energy */
+.nav-title {
+  color: var(--white);
+  font-size: 30px;
+  margin: 0;
+  line-height: 1;
+}

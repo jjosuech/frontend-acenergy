@@ -1,0 +1,52 @@
+.footer {
+  background: var(--dark-bg);
+  color: var(--white);
+  padding: 40px 24px 20px;
+}
+
+.footer-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.footer h4 {
+  color: var(--orange);
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-logo {
+  height: 90px;
+}
+
+.footer-text h4 {
+  margin: 0 0 6px;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Contacto */
+.footer-contact p {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  opacity: 0.7;
+}
