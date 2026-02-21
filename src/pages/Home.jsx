@@ -15,14 +15,22 @@ import Footer from "../components/Footer";
 
 
 function Home() {
-
   useEffect(() => {
     const section = document.querySelector('.about-parallax')
     const image = document.querySelector('.about-image')
 
-    const handleScroll = () => {
-      if (!section || !image) return
+    if (!section || !image) return
 
+    const handleScroll = () => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches
+
+      // EN MÓVIL
+      if (isMobile) {
+        image.style.transform = "none"
+        return
+      }
+
+      // EN PC 
       const rect = section.getBoundingClientRect()
       const windowHeight = window.innerHeight
 
@@ -30,16 +38,23 @@ function Home() {
         const progress =
           (windowHeight - rect.top) / (windowHeight + rect.height)
 
-        const translate = (progress-0.5) * 120
-        image.style.transform = `translateY(${translate}px)`
+        const translate = (progress - 0.5) * 120
+
+        image.style.transform = `translateY(${translate}px) scale(1.2)`
       }
     }
 
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+
     handleScroll()
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [])
+
 
   return (
     <>

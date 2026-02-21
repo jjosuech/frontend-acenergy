@@ -269,22 +269,206 @@
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* ===================================== */
+/* 📱 MOBILE (0 - 768px) */
+/* ===================================== */
 @media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* MAIN */
+  .main-content {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .engineer-container {
+    width: 100%;
+    height: 300px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .engineer-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .mission-vision {
+    max-width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .mission-vision h2 {
+    font-size: 22px;
+  }
+
+  .mission-vision p {
+    font-size: 14px;
+  }
+
+  /* STATS */
   .stats-section {
+    padding: 60px 20px;
+    margin-top: 100px;
     background-attachment: scroll;
   }
-  .overlay-content {
+
+  .stats {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
-  .overlay-logo {
-    width: 40%; 
+
+  .stat {
+    width: 100%;
   }
-  .overlay-logo2 {
-    width: 40%; 
+
+  /* ABOUT */
+  .about-parallax {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
   }
-  .overlay-text {
-    font-size: 24px;
+
+  .about-text {
+    padding: 30px 20px;
     text-align: center;
+    background: var(--dark-bg);   /* fondo oscuro */
+    color: var(--white);          /* texto blanco */
+    border-radius: 20px;
+  }
+
+  .about-text::before {
+    display: none;
+  }
+
+  .about-image-wrapper {
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .about-image {
+    position: relative;   
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+  }
+
+  /* GIF */
+  .gif-container {
+    height: 320px;
+  }
+
+  .overlay-content {
+    position: absolute;
+    bottom: -40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-61%, -50%);
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .overlay-text {
+    position: relative;
+    top: -90px;
+    left: 50%;
+    transform: translateY(30%);
+    font-size: 20px;
+  }
+
+  .overlay-logo,
+  .overlay-logo2,
+  .overlay-logo3 {
+    position: relative;
+    width: 120px;
+    margin-top: 80px;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+
+}
+
+
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* ===== MAIN ===== */
+  .main-content {
+    padding: 0 60px;
+    gap: 40px;
+  }
+
+  .engineer-container {
+    width: 420px;
+    height: auto;
+  }
+
+  .mission-vision {
+    max-width: 450px;
+    padding: 40px;
+  }
+
+  /* ===== STATS ===== */
+  .stats {
+    gap: 20px;
+  }
+
+  .stat {
+    padding: 20px;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-parallax {
+    gap: 30px;
+  }
+
+  .about-text {
+    padding: 60px 30px;
+  }
+
+  .about-image-wrapper {
+    height: 350px;
+  }
+
+  /* ===== GIF ===== */
+  .overlay-logo {
+    width: 160px;
+    left: 150px;
+  }
+
+  .overlay-logo2 {
+    width: 200px;
+    right: 100px;
+  }
+
+  .overlay-logo3 {
+    width: 120px;
+    left: 20px;
+  }
+
+  .overlay-text {
+    font-size: 26px;
   }
 }
