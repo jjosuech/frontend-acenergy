@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react"
 import Nav from "../components/Nav"
 import '../css/Servicios.css'
 import Footer from "../components/Footer"
+import servicios from "../data/servicios"
 
 function Servicios() {
-
-  const [servicios, setServicios] = useState([])
-
-  useEffect(() => {
-    fetch("https://acenergy.onrender.com/api/servicios")
-      .then(res => res.json())
-      .then(data => setServicios(data))
-      .catch(err => console.error(err))
-  }, [])
 
   return (
     <>
@@ -25,13 +16,15 @@ function Servicios() {
         </div>
 
         <div className="servicios-list">
-          {servicios.map(servicio => (
-            <div key={servicio.id} className="servicio-card">
-              <h3>{servicio.nombre}</h3>
-            </div>
+          {servicios
+            .filter(servicio => servicio.activo)
+            .map(servicio => (
+              <div key={servicio.id} className="servicio-card">
+                <h3>{servicio.nombre}</h3>
+                <p>{servicio.descripcion}</p>
+              </div>
           ))}
         </div>
-
       </div>
 
     <Footer />

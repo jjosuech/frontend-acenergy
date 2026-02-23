@@ -1,7 +1,9 @@
 .servicios-container {
   padding-top: 110px; /* para que no lo tape el nav */
-  background: var(--dark-bg);
-  min-height: 100vh;
+  background-image: url('../assets/portadaTrasera.png'); /* cambia el nombre */
+  background-size: cover;        /* que cubra todo */
+  background-position: center;   /* centrada */
+  background-repeat: no-repeat;
 }
 
 .servicios-banner {
@@ -24,15 +26,19 @@
   transform: translate(-50%, -50%);
   color: var(--white);
   font-size: 40px;
+
+  background: rgba(26, 43, 60, 0.85); /* tu --dark-bg con transparencia */
+  padding: 15px 30px;
+  border-radius: 12px;
 }
 
 .servicios-list {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 60px auto 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  padding: 0 40px;
+  padding: 0 40px 60px;
 }
 
 .servicio-card {
@@ -54,4 +60,18 @@
 
 .servicio-card:hover {
   transform: translateY(-5px);
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .servicios-container {
+    background-image: url('../assets/fondoTransCel.png');
+  }
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .servicios-container {
+    background-image: url('../assets/fondoTransCel.png');
+  }
 }
