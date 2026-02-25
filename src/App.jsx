@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home'
 import Servicios from './pages/Servicios'
+import ServicioInstance from "./pages/ServicioInstance"
 
 
 function App(){
@@ -9,6 +10,7 @@ function App(){
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/servicios/:id" element={<ServicioInstance />} />
         </Routes>
       </BrowserRouter>
     )

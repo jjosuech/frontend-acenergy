@@ -7,6 +7,7 @@ import servicios from '../data/servicios'
 function Nav() {
 
     const [menuOpen, setMenuOpen] = useState(false)
+    const isMobile = window.innerWidth <= 768;
 
     return (
         <header className='nav-wrapper'>
@@ -42,7 +43,19 @@ function Nav() {
                         </ul>
                     </li>
 
-                    <li><a href="/contact">Contacto</a></li>
+                    <li>
+                        {isMobile ? (
+                            <a 
+                            href="https://wa.me/51923689925" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            >
+                            Contacto
+                            </a>
+                        ) : (
+                            <a href="#contacto">Contacto</a>
+                        )}
+                    </li>
                 </ul>
 
             </nav>

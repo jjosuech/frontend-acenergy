@@ -3,7 +3,7 @@ const servicios = [
     "id": 1,
     "nombre": "Sistemas de Detección de Incendios",
     "descripcion": "Diseñamos, implementamos y configuramos sistemas de detección de incendio tipo convencional o direccionable según el requerimiento del cliente, así como sistemas de detección temprana para lugares especiales.",
-    "activo": true
+    "activo": true,
   },
   {
     "id": 2,

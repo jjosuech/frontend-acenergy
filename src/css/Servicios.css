@@ -21,15 +21,18 @@
 
 .servicios-banner h1 {
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -35%);
+
   color: var(--white);
   font-size: 40px;
-
   background: rgba(26, 43, 60, 0.85); /* tu --dark-bg con transparencia */
   padding: 15px 30px;
   border-radius: 12px;
+
+  
 }
 
 .servicios-list {
@@ -42,7 +45,9 @@
 }
 
 .servicio-card {
-  background: #1c1c1c;
+  background: rgba(28, 28, 28, 0.85);
+  backdrop-filter: blur(6px); /* efecto vidrio moderno */
+  -webkit-backdrop-filter: blur(6px); /* soporte Safari */
   border-radius: 20px;
   padding: 30px;
   transition: 0.3s ease;
@@ -52,10 +57,7 @@
 .servicio-card h3 {
   color: var(--orange);
   margin-bottom: 15px;
-}
-
-.servicio-card p {
-  color: var(--white);
+  text-align: center;
 }
 
 .servicio-card:hover {
@@ -74,4 +76,20 @@
   .servicios-container {
     background-image: url('../assets/fondoTransCel.png');
   }
+
+  .servicios-banner {
+    margin-bottom: 150px; /* aumentamos el espacio real */
+  }
+
+  .servicios-banner h1 {
+    top: 60%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+  }
+  
+  .servicio-card h3 {
+  color: var(--orange);
+  text-align: center;
+  text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+}
 }

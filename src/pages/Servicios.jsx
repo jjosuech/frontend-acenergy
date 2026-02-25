@@ -2,6 +2,7 @@ import Nav from "../components/Nav"
 import '../css/Servicios.css'
 import Footer from "../components/Footer"
 import servicios from "../data/servicios"
+import { Link } from "react-router-dom"
 
 function Servicios() {
 
@@ -19,10 +20,13 @@ function Servicios() {
           {servicios
             .filter(servicio => servicio.activo)
             .map(servicio => (
-              <div key={servicio.id} className="servicio-card">
+              <Link 
+                to={`/servicios/${servicio.id}`} 
+                key={servicio.id} 
+                className="servicio-card"
+              >
                 <h3>{servicio.nombre}</h3>
-                <p>{servicio.descripcion}</p>
-              </div>
+              </Link>
           ))}
         </div>
       </div>

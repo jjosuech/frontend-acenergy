@@ -3,7 +3,7 @@ import Logo from '../assets/logo.png'
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id='contacto'>
       <div className="footer-content">
 
         <div className="footer-brand">
@@ -20,7 +20,16 @@ function Footer() {
         <div className='footer-contact'>
           <h4>Contacto</h4>
           <p>Email: ac.energy.peru@gmail.com</p>
-          <p>Tel: +51 923 689 925</p>
+          <p>
+            Tel:  
+            <a 
+              href="https://wa.me/51923689925"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}+51 923 689 925
+            </a>
+          </p>
         </div>
       </div>
 
