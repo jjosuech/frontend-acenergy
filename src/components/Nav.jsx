@@ -37,7 +37,12 @@ function Nav() {
                                 .filter(servicio => servicio.activo)
                                 .map(servicio => (
                                     <li key={servicio.id}>
-                                        {servicio.nombre}
+                                        <Link 
+                                            to={`/servicios/${servicio.id}`} 
+                                            onClick={() => setMenuOpen(false)}
+                                        >
+                                            {servicio.nombre}
+                                        </Link>
                                     </li>
                             ))}
                         </ul>

@@ -14,13 +14,8 @@ function ServicioInstance() {
 
   // Construimos rutas dinámicas
   const imagen1 = new URL(`../assets/servicios/${id}_1.png`, import.meta.url).href
+  const imagen2 = new URL(`../assets/servicios/${id}_2.png`, import.meta.url).href
 
-  let imagen2
-  try {
-    imagen2 = new URL(`../assets/servicios/${id}_2.png`, import.meta.url).href
-  } catch {
-    imagen2 = null
-  }
 
   return (
     <>
@@ -39,10 +34,14 @@ function ServicioInstance() {
               <p>{servicio.descripcion}</p>
           </div>
 
-          {/* Segunda imagen si existe */}
-          {imagen2 && (
-            <img src={imagen2} alt={servicio.nombre} className="servicio-img secundaria" onError={() => setMostrarImagen2(false)} />
-          )}
+          
+          <img
+            src={imagen2}
+            alt=""
+            className="servicio-img secundaria"
+            onError={(e) => e.target.remove()} 
+          />
+          
 
         </div>
 
