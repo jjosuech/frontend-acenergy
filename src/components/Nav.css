@@ -114,9 +114,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .dropdown:hover .dropdown-menu {
-    display: flex;
+  .dropdown-menu {
+    display: none;
   }
+
+  .dropdown-menu.show {
+    display: flex;
+  } 
 }
 
 /* HAMBURGER */

@@ -8,6 +8,7 @@ function Nav() {
 
     const [menuOpen, setMenuOpen] = useState(false)
     const isMobile = window.innerWidth <= 768;
+    const [dropdownOpen, setDropdownOpen] = useState(false)
 
     return (
         <header className='nav-wrapper'>
@@ -29,21 +30,29 @@ function Nav() {
                 <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
                     <li><Link to="/">Inicio</Link></li>
 
-                    <li className="dropdown">
+                    
+                    <li 
+                    className="dropdown"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                    >
                         <Link to="/servicios">Servicios</Link>
 
-                        <ul className="dropdown-menu">
+                        <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                             {servicios
-                                .filter(servicio => servicio.activo)
-                                .map(servicio => (
-                                    <li key={servicio.id}>
-                                        <Link 
-                                            to={`/servicios/${servicio.id}`} 
-                                            onClick={() => setMenuOpen(false)}
-                                        >
-                                            {servicio.nombre}
-                                        </Link>
-                                    </li>
+                            .filter(servicio => servicio.activo)
+                            .map(servicio => (
+                                <li key={servicio.id}>
+                                <Link 
+                                    to={`/servicios/${servicio.id}`}
+                                    onClick={() => {
+                                    setDropdownOpen(false)
+                                    setMenuOpen(false)
+                                    }}
+                                >
+                                    {servicio.nombre}
+                                </Link>
+                                </li>
                             ))}
                         </ul>
                     </li>
