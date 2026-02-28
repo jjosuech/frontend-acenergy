@@ -61,6 +61,30 @@
   opacity: 0.7;
 }
 
+
+/* Necesario para posicionar la flecha respecto al footer */
+#contacto {
+  position: relative;
+}
+
+/* Flecha cuando el footer es el target */
+#contacto:target::before {
+  content: "↓";
+  position: absolute;
+  top: -35px;              /* la sube encima del footer */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: var(--orange);
+  animation: bounce 1.2s infinite;
+}
+/* Animación */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+
 @media (max-width: 768px) {
 
   .footer-content {

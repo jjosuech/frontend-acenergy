@@ -28,7 +28,9 @@ function Nav() {
                 </div>
 
                 <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-                    <li><Link to="/">Inicio</Link></li>
+                    <li><Link to="/"
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    >Inicio</Link></li>
 
                     
                     <li 

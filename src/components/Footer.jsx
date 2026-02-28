@@ -3,7 +3,7 @@ import Logo from '../assets/logo.png'
 
 function Footer() {
   return (
-    <footer className="footer" id='contacto'>
+    <footer className="footer" >
       <div className="footer-content">
 
         <div className="footer-brand">
@@ -17,7 +17,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className='footer-contact'>
+        <div className='footer-contact' id='contacto'>
           <h4>Contacto</h4>
           <p>Email: ac.energy.peru@gmail.com</p>
           <p>

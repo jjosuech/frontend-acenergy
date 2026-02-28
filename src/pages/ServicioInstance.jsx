@@ -34,7 +34,7 @@ function ServicioInstance() {
               <p>{servicio.descripcion}</p>
           </div>
 
-          
+          {/*para la imagen 2 pero solo si esk existe*/}
           <img
             src={imagen2}
             alt=""

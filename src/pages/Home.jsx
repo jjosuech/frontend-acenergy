@@ -86,7 +86,7 @@ function Home() {
         </div>
       </section>
       
-      {/* ===== BLOQUE COMO LA IMAGEN DE REFERENCIA ===== */}
+      {/*BLOQUE COMO LA IMAGEN DE REFERENCIA */}
       <section className="about-parallax">
         <div className="about-text">
           <h2>¿Quiénes Somos?</h2>
