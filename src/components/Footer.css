@@ -62,6 +62,26 @@
 }
 
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--orange);
+}
+
+.social-icon {
+  font-size: 18px;
+}
+
+
+
 /* Necesario para posicionar la flecha respecto al footer */
 #contacto {
   position: relative;

@@ -1,5 +1,6 @@
 import './Footer.css'
 import Logo from '../assets/logo.png'
+import { FaTiktok, FaFacebookF } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -28,6 +29,30 @@ function Footer() {
               rel="noopener noreferrer"
             >
               {" "}+51 923 689 925
+            </a>
+          </p>
+          <h4>Redes Sociales</h4>
+          <p>
+            <a 
+              href="https://www.tiktok.com/@acenergy.peru?_r=1&_t=ZS-94JWXGyx5r2" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              <FaTiktok className="social-icon" />
+              TikTok
+            </a>
+          </p>
+
+          <p>
+            <a 
+              href="https://www.facebook.com/share/1HTQyUF6wN/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              <FaFacebookF className="social-icon" />
+              Facebook
             </a>
           </p>
         </div>

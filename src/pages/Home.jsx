@@ -124,12 +124,7 @@ function Home() {
           <img src={Aliado3} alt="Empresa aliada3" className='overlay-logo3' />
           <img src={Aliado2} alt="Empresa alidas2"className='overlay-logo2'/>
         </div>
-      </div>
-
-
-
-
-      
+      </div>     
       <Footer />
     </> 
   )
@@ -138,32 +133,46 @@ function Home() {
 function Stat({ number, suffix, text }) {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
+  const startedRef = useRef(false)
 
   useEffect(() => {
-    let started = false
+    const element = ref.current
+    if (!element) return
+
+    const startCounter = () => {
+      if (startedRef.current) return
+      startedRef.current = true
+
+      let current = 0
+      const increment = number / 40
+
+      const interval = setInterval(() => {
+        current += increment
+        if (current >= number) {
+          setCount(number)
+          clearInterval(interval)
+        } else {
+          setCount(Math.floor(current))
+        }
+      }, 25)
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          started = true
-          let current = 0
-          const increment = number / 40
-
-          const interval = setInterval(() => {
-            current += increment
-            if (current >= number) {
-              setCount(number)
-              clearInterval(interval)
-            } else {
-              setCount(Math.floor(current))
-            }
-          }, 25)
+        if (entry.isIntersecting) {
+          startCounter()
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.2 } // MÁS BAJO y más seguro
     )
 
-    if (ref.current) observer.observe(ref.current)
+    observer.observe(element)
+
+    // 🔥 CLAVE: verificar si ya está visible al cargar
+    const rect = element.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      startCounter()
+    }
 
     return () => observer.disconnect()
   }, [number])
